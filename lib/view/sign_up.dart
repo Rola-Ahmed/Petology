@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../responsive.dart';
@@ -11,10 +12,21 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  List<DropdownMenuItem<String>> get dropdownItems {
+    List<DropdownMenuItem<String>> menuItems = [
+      DropdownMenuItem(child: Text("USA"), value: "USA"),
+      DropdownMenuItem(child: Text("Canada"), value: "Canada"),
+      DropdownMenuItem(child: Text("Brazil"), value: "Brazil"),
+      DropdownMenuItem(child: Text("England"), value: "England"),
+    ];
+    return menuItems;
+  }
+
+  var selectedValue='Categories';
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    String dropdownValue = 'One';
+    String dropdownValue = 'Cat';
     return Scaffold(
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar()
@@ -186,7 +198,6 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
 
-
               ////lAST NAME TEXT-FIELD
               TextField(
                 //controller: nameTextController,
@@ -209,8 +220,6 @@ class _SignUpState extends State<SignUp> {
                   fontSize: 20,
                 ),
               ),
-
-
 
               ////Password TEXT-FIELD
               TextField(
@@ -256,6 +265,46 @@ class _SignUpState extends State<SignUp> {
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
+              ),
+
+              //////////////////Drop Down
+              // DropdownButton(
+              //   value: selectedValue,
+              //   items: dropdownItems,
+              //   onChanged: (String? value) {
+              //     value='Categories';
+              //     setState(() {
+              //       selectedValue = value!;
+              //     },);
+              //   },
+              // ),
+              Container(
+               width: 50,
+               color: Color.fromARGB(255, 210, 209, 209),
+                child: DropdownButton<String>(
+                  
+
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_downward),
+      elevation: 16,
+      style: const TextStyle(color: Colors.deepPurple),
+      underline: Container(
+        height: 2,
+        color: Colors.deepPurpleAccent,
+      ),
+      onChanged: (String? newValue) {
+        setState(() {
+          dropdownValue = newValue!;
+        });
+      },
+      items: <String>['Cat', 'Dog']
+          .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    ),
               ),
             ],
           ),
