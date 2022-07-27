@@ -5,8 +5,6 @@ import '../top_bar_contents.dart';
 import "package:petology/font/costum_google_icon.dart";
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-
-
 class SignUp extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
@@ -39,6 +37,9 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
           child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // mainAxisSize: MainAxisSize.max,
             children: [
               Center(
                 child: Text(
@@ -50,7 +51,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-               SizedBox(height: 30),
+              //  SizedBox(height: 30), //used spaceEvenly
 
               ///////////////////////////////
 
@@ -62,7 +63,7 @@ class _SignUpState extends State<SignUp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                 Container(
+                  Container(
                     //color: Colors.blue,
                     width: screenSize.width / 5,
                     height: 40,
@@ -82,14 +83,14 @@ class _SignUpState extends State<SignUp> {
                         primary: Colors.blue, //background color of button
                         side: BorderSide(
                             width: 3,
-                            
                             color: Colors.blue), //border width and color
                         elevation: 3, //elevation of button
                         shape: RoundedRectangleBorder(
                             //to set border radius to button
                             borderRadius: BorderRadius.circular(30)),
-                       /// padding:
-                          //  EdgeInsets.only(top), //content padding inside button
+
+                        /// padding:
+                        //  EdgeInsets.only(top), //content padding inside button
                       ),
                       onPressed: () {},
                       icon: new Icon(
@@ -106,7 +107,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                   ////////////////////////////////////////////////////////////////////////
-                  SizedBox(width: 10),
+                  // SizedBox(width: 10),
 
                   Container(
                     //color: Colors.blue,
@@ -128,14 +129,14 @@ class _SignUpState extends State<SignUp> {
                         primary: Colors.white, //background color of button
                         side: BorderSide(
                             width: 3,
-                            
                             color: Colors.black), //border width and color
                         elevation: 3, //elevation of button
                         shape: RoundedRectangleBorder(
                             //to set border radius to button
                             borderRadius: BorderRadius.circular(30)),
-                       /// padding:
-                          //  EdgeInsets.only(top), //content padding inside button
+
+                        /// padding:
+                        //  EdgeInsets.only(top), //content padding inside button
                       ),
                       onPressed: () {},
                       icon: new Icon(
@@ -154,38 +155,108 @@ class _SignUpState extends State<SignUp> {
                   ///////////////////////////////////
                 ],
               ),
-              Row(children: [
-                Text('________________________________________________ or _________________________________________________'),
-              ],),
-      SizedBox(width: 20),
+              Row(
+                children: [
+                  Text(
+                      '________________________________________________ or _________________________________________________'),
+                ],
+              ),
+              //SizedBox(width: 20),
 
-               Container(
-                margin: ,
-                 child: TextField(
-                         
-                          //controller: nameTextController,
-                          textAlign: TextAlign.left,
-                        
-                          decoration: new InputDecoration(
-                           
-    enabledBorder:  OutlineInputBorder(
-      // width: 0.0 produces a thin "hairline" border
-       borderRadius: BorderRadius.circular(30.0),
-      borderSide: const BorderSide(color: Color.fromARGB(255, 217, 217, 217), width: 1.0),
-    ),
-    border: const OutlineInputBorder(),
-    labelStyle: new TextStyle(color: Color.fromARGB(255, 176, 124, 105),),
-   hintText: 'First Name',
-  ),
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                           // height: 0.01,
+////FIRST NAME TEXT-FIELD
+              TextField(
+                //controller: nameTextController,
+                textAlign: TextAlign.left,
 
-                            //width:
-                          ),
-                        ),
-               ),
+                decoration: new InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: const BorderSide(
+                        color: Color.fromARGB(255, 217, 217, 217), width: 1.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: new TextStyle(
+                    color: Color.fromARGB(255, 176, 124, 105),
+                  ),
+                  hintText: 'First Name',
+                ),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+
+
+              ////lAST NAME TEXT-FIELD
+              TextField(
+                //controller: nameTextController,
+                textAlign: TextAlign.left,
+
+                decoration: new InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: const BorderSide(
+                        color: Color.fromARGB(255, 217, 217, 217), width: 1.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: new TextStyle(
+                    color: Color.fromARGB(255, 176, 124, 105),
+                  ),
+                  hintText: 'last Name',
+                ),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+
+
+
+              ////Password TEXT-FIELD
+              TextField(
+                //controller: nameTextController,
+                textAlign: TextAlign.left,
+
+                decoration: new InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: const BorderSide(
+                        color: Color.fromARGB(255, 217, 217, 217), width: 1.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: new TextStyle(
+                    color: Color.fromARGB(255, 176, 124, 105),
+                  ),
+                  hintText: 'Password',
+                ),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+
+              ////RE---Password TEXT-FIELD
+              TextField(
+                //controller: nameTextController,
+                textAlign: TextAlign.left,
+
+                decoration: new InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: const BorderSide(
+                        color: Color.fromARGB(255, 217, 217, 217), width: 1.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: new TextStyle(
+                    color: Color.fromARGB(255, 176, 124, 105),
+                  ),
+                  hintText: 'Re-Enter Password',
+                ),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
             ],
           ),
         ),
